@@ -1,8 +1,8 @@
-import sensor.LocalColorCamera;
-import sensor.LocalTemperatureSensor;
-import sensor.LocalThermalCamera;
-import sensor.RemoteTemperatureSensor;
-import sensor.RemoteThermalCamera;
+import sensor.local.LocalColorCamera;
+import sensor.local.LocalTemperatureSensor;
+import sensor.local.LocalThermalCamera;
+import sensor.remoto.RemoteTemperatureSensor;
+import sensor.remoto.RemoteThermalCamera;
 import monitor.Monitor;
 
 

@@ -1,4 +1,4 @@
-package sensor;
+package sensor.remoto;
 
 public class RemoteThermalCamera extends RemoteSensor {
 
@@ -11,4 +11,14 @@ public class RemoteThermalCamera extends RemoteSensor {
 		this.sendRemoteCommand("GET_THERM_MOV");
 		return  this.getRemoteReply() > 40;
 	}
+        
+         private int times = 0;
+        
+         @Override
+    public int countTimesPresence() {
+        if(presence()){
+            return times++;
+        }else
+           return times;
+    }
 }

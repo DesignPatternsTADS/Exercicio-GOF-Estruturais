@@ -1,4 +1,4 @@
-package sensor;
+package sensor.remoto;
 
 public class RemoteColorCamera extends RemoteSensor {
 
@@ -11,5 +11,15 @@ public class RemoteColorCamera extends RemoteSensor {
 		this.sendRemoteCommand("GET_MOV");
 		return  this.getRemoteReply() > 40;
 	}
+        
+         private int times = 0;
+        
+         @Override
+    public int countTimesPresence() {
+        if(presence()){
+            return times++;
+        }else
+           return times;
+    }
 
 }

@@ -1,6 +1,9 @@
-package sensor;
+package sensor.local;
 
-public abstract class LocalSensor extends Sensor {
+import sensor.Sensor;
+import sensor.SensorDecorator;
+
+public abstract class LocalSensor extends Sensor  {
 	
 	public LocalSensor(String Id) {
 		super(Id);
@@ -17,4 +20,9 @@ public abstract class LocalSensor extends Sensor {
 		System.out.println("Local Sensor " + this.Id + ": getting reply: " + reply);
 		return reply;
 	}	
+        
+        
+        
+     
+        
 }

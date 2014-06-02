@@ -1,4 +1,6 @@
-package sensor;
+package sensor.remoto;
+
+import sensor.Sensor;
 
 public abstract class RemoteSensor extends Sensor {
 	
