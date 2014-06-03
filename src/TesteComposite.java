@@ -1,7 +1,7 @@
 
 import sensor.Sensor;
 import sensor.SensorComposite;
-import sensor.SensorDecorator;
+
 import sensor.local.LocalColorCamera;
 import sensor.local.LocalTemperatureSensor;
 import sensor.local.LocalThermalCamera;

@@ -6,6 +6,7 @@ public class LocalThermalCamera extends LocalSensor {
     
 	public LocalThermalCamera(String Id) {
 		super(Id);
+                super.type = "LocalThermalCamera";
 	}
 
 	@Override

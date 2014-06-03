@@ -17,12 +17,14 @@ public abstract class RemoteSensor extends Sensor {
 	protected void sendRemoteCommand(String command) {
 		// send command to remote device via network
 		System.out.println("Remote Sensor " + this.Id + ": sending command " + command);
+                super.command = command;
 	}
 	
 	protected int getRemoteReply() {
 		// get response from device
 		int reply = Double.valueOf(Math.random() * 100).intValue(); 
 		System.out.println("Remote Sensor " + this.Id + ": getting reply: " + reply);
+                super.valueReply = reply;
 		return reply;
 	}
 }

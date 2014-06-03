@@ -5,6 +5,7 @@ public class LocalTemperatureSensor extends LocalSensor {
 	public LocalTemperatureSensor(String Id) {
 		super(Id);
 		// TODO Auto-generated constructor stub
+                super.type = "LocalTemperatureCamera";
 	}
 
 	@Override

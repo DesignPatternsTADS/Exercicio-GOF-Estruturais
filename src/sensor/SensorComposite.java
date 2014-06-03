@@ -18,7 +18,7 @@ public class SensorComposite extends Sensor {
     public SensorComposite() {
 
         super();
-                        System.out.println("Initializing SensorComposite");
+        System.out.println("Initializing SensorComposite");
 
         this.sensors = new ArrayList<Sensor>();
     }
@@ -31,21 +31,22 @@ public class SensorComposite extends Sensor {
     public void remove(Sensor sensor) {
         this.sensors.remove(sensor);
         System.out.println("Sensor removed success!");
-        
+
 
     }
-
 
     @Override
     public boolean presence() {
         boolean temp = false;
         for (Sensor sensor : this.sensors) {
-            if(sensor.presence()){
-            System.out.println("Type Sensor" + sensor.type);
-            System.out.println("Id Sensor" + sensor.Id);
-            System.out.println("Presence Sensor" + sensor.presence);
-            
-            temp = true;
+            if (sensor.presence() == true) {
+                sensor.presence  =true;
+                
+                System.out.println("Id Sensor: " + sensor.Id);
+                System.out.println("Type Sensor: " + sensor.type);
+                System.out.println("Presence Sensor: " + sensor.presence);
+
+                temp = true;
             }
         }
         return temp;

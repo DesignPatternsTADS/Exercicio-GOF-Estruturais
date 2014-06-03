@@ -2,12 +2,14 @@ package sensor;
 
 import java.util.Calendar;
 
-public abstract class Sensor implements SensorDecorator {
+public abstract class Sensor implements Security {
 
     protected String Id = null;
     protected static int id = 0;
     protected String type;
     protected boolean presence;
+    protected int valueReply;
+    protected String command;
 
     public Sensor() {
     }
@@ -26,4 +28,13 @@ public abstract class Sensor implements SensorDecorator {
     }
 
     public abstract boolean presence();
+    @Override
+    public abstract int countTimesPresence();
+
+    @Override
+    public void envia(String mensagem) {
+
+        System.out.println("Realize Acess Security : ");
+        System.out.println(mensagem);
+    }
 }

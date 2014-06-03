@@ -1,7 +1,7 @@
 package sensor.local;
 
 import sensor.Sensor;
-import sensor.SensorDecorator;
+
 
 public abstract class LocalSensor extends Sensor  {
 	

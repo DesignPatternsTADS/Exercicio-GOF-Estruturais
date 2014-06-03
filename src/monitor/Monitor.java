@@ -2,7 +2,7 @@ package monitor;
 
 import java.util.ArrayList;
 import java.util.List;
-import sensor.AcessSecurity;
+import sensor.SensorDecoratorAcessSecurity;
 
 import sensor.Sensor;
 
@@ -23,7 +23,7 @@ public class Monitor {
 	}
         
         public void registerUser(String user, String password){
-          new AcessSecurity(user, password).registerUser();
+        //  new SensorDecoratorAcessSecurity(user, password).registerUser();
             
         }
         

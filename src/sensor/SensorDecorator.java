@@ -8,7 +8,20 @@ package sensor;
  *
  * @author jcrbsa
  */
-public interface SensorDecorator{
-    int countTimesPresence();
+public abstract class SensorDecorator extends Sensor implements Security{
+    private Security security;
+
+    public SensorDecorator(Security security) {
+       
+        this.security = security;
+    }
+    public abstract void envia(String mensagem);
+    public abstract boolean presence();
+
+    public Security getSecurity() {
+        return security;
+    }
+    
+    
     
 }

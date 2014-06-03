@@ -15,13 +15,13 @@ import sensor.remoto.RemoteSensor;
  *
  * @author jcrbsa
  */
-public class SensorProxy extends RemoteSensor {
+public class SensorProxy extends Sensor {
 
     private Sensor sensor;
     private static Map<String, Sensor> listSensors = new HashMap<String, Sensor>();
 
-    public SensorProxy(Sensor sensor, String Id) {
-        super(Id);
+    public SensorProxy(Sensor sensor) {
+        super(sensor.Id);
         this.sensor = sensor;
 
     }
@@ -36,15 +36,26 @@ public class SensorProxy extends RemoteSensor {
 
     }
 
-    public boolean cachePresence(String id) {
+    public void cachePresence(String id) {
         System.out.println("Obtain Sensor Remote Proxy Cache Presence:");
-        return listSensors.get(id).presence();
+        
+        Sensor s = listSensors.get(id);
+        
+        System.out.println("Remote Sensor " + s.Id + ": sending command " + s.command);
+        System.out.println("Remote Sensor " + s.Id + ": getting reply: " + s.valueReply);
+        
+        
 
     }
 
+    /* @Override
+     public int countTimesPresence() {
+     System.out.println("Sensor Remote Proxy Times Presence:");
+     return this.sensor.countTimesPresence();
+     }*/
     @Override
     public int countTimesPresence() {
-        System.out.println("Sensor Remote Proxy Times Presence:");
+
         return this.sensor.countTimesPresence();
     }
 }
